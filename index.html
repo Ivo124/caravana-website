@@ -1,25 +1,176 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Primera Página Web</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Caravana Game Studios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Smooth scrolling for navigation. */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Color palette for the professional and light theme. */
+        :root {
+            --light-bg: #f5f5f7;
+            --container-bg: #ffffff;
+            --text-color: #1d1d1f;
+            --accent-color: #0071e3;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Styles for headers, following a bold and clean style. */
+        h1, h2 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* Style for the accent color. */
+        .accent-text {
+            color: var(--accent-color);
+        }
+        
+        /* Subtle shadow styles for a "floating" effect. */
+        .card-shadow {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .container {
+            max-width: 1280px;
+        }
+
+        /* CSS para el efecto de la tarjeta */
+        #project-card {
+            /* Habilita la perspectiva 3D para los hijos del elemento */
+            perspective: 1000px;
+            
+            /* Define una variable para la posición del gradiente de fondo */
+            --grad-pos: 50% 50%;
+            
+            /* Crea el gradiente de fondo con un efecto de brillo */
+            background-image: radial-gradient(circle at var(--grad-pos), rgba(0, 113, 227, 0.15), rgba(0, 0, 0, 0));
+            
+            /* Transiciones suaves para la transformación */
+            transition: transform 0.2s ease-out;
+            
+            /* Oculta cualquier parte del gradiente que sobresalga de la tarjeta */
+            overflow: hidden;
+        }
+
+        /* Estilo inicial de la transformación para la imagen */
+        #project-card img {
+            transition: transform 0.2s ease-out;
+        }
+
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="bg-gray-100 text-gray-900 font-sans">
+    <div class="container mx-auto px-4">
 
-    <header>
-        <h1>¡Hola, Mundo!</h1>
-        <p>Esta es mi primera página web.</p>
-    </header>
+        <section id="hero" class="h-screen flex flex-col justify-center items-center text-center p-8">
+            <h1 class="text-5xl md:text-7xl font-bold font-inter text-gray-900">Caravana Game Studios</h1>
+            <p class="mt-4 text-xl md:text-2xl font-semibold text-gray-600">Creating worlds, weaving stories.</p>
+        </section>
 
-    <main>
-        <p>Puedes agregar más contenido aquí.</p>
-    </main>
+        <section id="about" class="my-16 p-8 bg-white rounded-xl card-shadow border border-gray-200">
+            <h2 class="text-4xl font-bold font-inter mb-6 text-gray-900">About Us</h2>
+            <p class="text-lg leading-relaxed text-gray-700">
+                Caravana Game Studios is an indie video game development startup based in Argentina. We are dedicated to creating unique gaming experiences, combining captivating narratives with innovative mechanics. We believe in the power of games to inspire, connect, and transport players to new and unforgettable worlds. Our team strives to push the boundaries of creativity and technology to deliver high-quality titles that will resonate with a global audience.
+            </p>
+        </section>
 
-    <footer>
-        <p>Derechos de autor © 2024</p>
-    </footer>
+        <section id="project" class="my-16 p-8 bg-white rounded-xl card-shadow border border-gray-200">
+            <h2 class="text-4xl font-bold font-inter mb-6 text-gray-900">Featured Project</h2>
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+                <div class="w-full md:w-1/2">
+                    <div id="project-card" class="rounded-xl object-cover w-full h-auto card-shadow">
+                        <img src="https://placehold.co/800x600/f0f0f0/1a1a1a?text=Luni+Turni+Logo" alt="Luni Turni Logo" class="rounded-xl w-full h-auto" style="transform: scale3d(1, 1, 1);">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <h3 class="text-3xl font-semibold font-inter mb-2 text-gray-900">Luni Turni</h3>
+                    <p class="text-lg leading-relaxed mb-4 text-gray-600">
+                        A turn-based strategy game that will challenge you to think about every move to dominate the board. Developed for the Poki platform with the goal of a final launch for mobile devices.
+                    </p>
+                    <p class="text-sm font-semibold text-gray-500">
+                        <span class="accent-text">Platforms:</span> Poki, iOS & Android (coming soon).
+                    </p>
+                </div>
+            </div>
+        </section>
 
+        <section id="contact" class="my-16 p-8 bg-white rounded-xl card-shadow border border-gray-200">
+            <h2 class="text-4xl font-bold font-inter mb-6 text-gray-900">Contact</h2>
+            <p class="text-lg leading-relaxed mb-4 text-gray-700">
+                Do you have any questions or want to collaborate with us? Feel free to send us an email.
+            </p>
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <a href="mailto:contact@caravanagamestudios.com" class="text-lg font-bold hover:underline transition-all duration-300 text-gray-800">
+                    <span class="accent-text">Email:</span> contact@caravanagamestudios.com
+                </a>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-3xl text-gray-500 hover:text-gray-900 transition-colors duration-300" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-3xl text-gray-500 hover:text-gray-900 transition-colors duration-300" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-3xl text-gray-500 hover:text-gray-900 transition-colors duration-300" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-3xl text-gray-500 hover:text-gray-900 transition-colors duration-300" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center text-sm py-8 text-gray-500">
+            © 2023 Caravana Game Studios. All rights reserved.
+        </footer>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const card = document.getElementById('project-card');
+
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                // Normaliza las coordenadas a un rango de -1 a 1 para facilitar los cálculos
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const normX = (x - centerX) / centerX;
+                const normY = (y - centerY) / centerY;
+
+                // Calcula la rotación 3D y la escala, ajustando los valores
+                const rotateY = normX * 10; // 10 grados de rotación
+                const rotateX = -normY * 10; // La rotación X es invertida para un efecto más natural
+                const scale = 1.05; // 5% de zoom
+
+                // Aplica las transformaciones y la posición del gradiente
+                card.style.transform = `scale3d(${scale}, ${scale}, ${scale}) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                card.style.setProperty('--grad-pos', `${(x / rect.width) * 100}% ${(y / rect.height) * 100}%`);
+            });
+
+            // Restablece la tarjeta a su estado original cuando el cursor sale
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = `scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)`;
+                card.style.setProperty('--grad-pos', '50% 50%');
+            });
+        });
+    </script>
 </body>
 </html>
